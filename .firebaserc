@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sgcp-28ea1": {
+      "hosting": {
+        "coreui-free-angular-admin-template": [
+          "sgcp-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sgcp-28ea1"
+  }
+}

@@ -1,9 +1,11 @@
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+
+
 import { NgModule } from '@angular/core';
-import {
-  HashLocationStrategy,
-  LocationStrategy,
-  PathLocationStrategy,
-} from '@angular/common';
+import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -17,11 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Import containers
-import {
-  DefaultFooterComponent,
-  DefaultHeaderComponent,
-  DefaultLayoutComponent,
-} from './containers';
+import { DefaultFooterComponent, DefaultHeaderComponent, DefaultLayoutComponent } from './containers';
 
 import {
   AvatarModule,
@@ -41,25 +39,35 @@ import {
   SharedModule,
   SidebarModule,
   TabsModule,
-  UtilitiesModule,
+  UtilitiesModule
 } from '@coreui/angular';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-
-// Import AngularFireModule and environment
-import { AngularFireModule } from '@angular/fire';
-
-import { environment } from '../environments/environments';
+import { AngularFireModule } from '@angular/fire/compat';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
+import { initializeAppCheck, ReCaptchaEnterpriseProvider, provideAppCheck } from '@angular/fire/app-check';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { getFunctions, provideFunctions } from '@angular/fire/functions';
+import { getMessaging, provideMessaging } from '@angular/fire/messaging';
+import { getPerformance, providePerformance } from '@angular/fire/performance';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { getRemoteConfig, provideRemoteConfig } from '@angular/fire/remote-config';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
   DefaultHeaderComponent,
-  DefaultLayoutComponent,
+  DefaultLayoutComponent
 ];
+
+
 
 @NgModule({
   declarations: [AppComponent, ...APP_CONTAINERS],
   imports: [
+    AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -86,17 +94,37 @@ const APP_CONTAINERS = [
     ListGroupModule,
     CardModule,
     NgScrollbarModule,
-    // Initialize Firebase
-    AngularFireModule.initializeApp(environment.firebase),
+    provideFirebaseApp(() => initializeApp({
+      projectId: "sgcp-28ea1",
+      appId: "1:780997422042:web:dda0f59c49ef23c6d56ee3",
+      databaseURL: "https://sgcp-28ea1-default-rtdb.firebaseio.com",
+      storageBucket: "sgcp-28ea1.appspot.com",
+      apiKey: "AIzaSyBPM1eUlGAheEmygi0SAzsRx6M5m4idZu4",
+      authDomain: "sgcp-28ea1.firebaseapp.com",
+      messagingSenderId: "780997422042",
+      measurementId: "G-TGF4SNWMM6"
+    })),
+    provideAuth(() => getAuth()),
+    provideAnalytics(() => getAnalytics()),
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
+    provideFunctions(() => getFunctions()),
+    provideMessaging(() => getMessaging()),
+    providePerformance(() => getPerformance()),
+    provideStorage(() => getStorage()),
+    provideRemoteConfig(() => getRemoteConfig())
   ],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: HashLocationStrategy,
+      useClass: HashLocationStrategy
     },
     IconSetService,
     Title,
+    ScreenTrackingService,
+    UserTrackingService
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
