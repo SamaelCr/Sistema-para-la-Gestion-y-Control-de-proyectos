@@ -1,0 +1,89 @@
+
+Fases del Proyecto:
+
+Paso 1:
+Definir base de datos.
+Implementa rutas y controladores para gestionar fases y proyectos.
+
+Carga de Documentos:
+permitir la carga de documentos.
+Asocia los documentos cargados con proyectos o fases específicas en la base de datos.
+
+
+* Implementar funcion | Carga de documentos
+
+
+|| Paso 2: Implementar Registro de Personas y Creación de Proyectos [X]
+Registro de Personas:
+
+
+* crear interfaces de | 
+registro de personas:
+
+*nombres y apellido
+*cedula
+*telefono
+*voceria
+*Es suplente o no?
+*comuna
+*consejo comunal
+*manzana
+*direccion
+
+Creacion de proyectos:
+*Titulo
+*Tipo de proyecto 
+*Descripción
+*Objetivos
+*Estado del proyecto
+*Participantes
+*Actividades
+*Resultados esperados
+*Presupuesto
+
+
+
+Implementa un sistema de registro y autenticación
+Almacena la información de los usuarios
+
+Creación de Proyectos:
+Permite que los usuarios registrados creen nuevos proyectos.
+Asocia los proyectos creados con el usuario correspondiente.
+
+
+
+* Crear interfaces de | A detalle Creacion de proyectos - Asociados a usuario
+
+
+
+|| Paso 3: Integración de Google Maps [X]
+Obtener API Key de Google Maps:
+
+
+
+* Crear interfaz | Google maps - localizacion
+
+
+
+Regístrate en la Consola de Desarrolladores de Google.
+Crea un proyecto y habilita la API de Google Maps.
+Integración en Angular:
+
+Utiliza el módulo @agm/core para integrar Google Maps en tu aplicación Angular.
+Utiliza la API Key que obtuviste para autenticar las solicitudes a Google Maps API.
+
+
+|| Paso 4: Implementar Calendario [X]
+
+Angular Calendar:
+Utiliza bibliotecas como angular-calendar para implementar un calendario en tu aplicación Angular.
+
+
+* Crear Interfaz | Calendario
+
+|| Paso 5: Implementar Diagrama de Grant para manejar proyectos [X]
+
+Diagram Grant:
+Usar libreria como diagram para implementar
+
+* Crear interfaz | Diagrama de Grant
