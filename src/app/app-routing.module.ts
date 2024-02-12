@@ -1,3 +1,4 @@
+import { ProyectosCreacionComponent } from './modulos/proyectos/proyectos-creacion/proyectos-creacion.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -26,6 +27,10 @@ const routes: Routes = [
           import('./views/dashboard/dashboard.module').then(
             (m) => m.DashboardModule
           ),
+      },
+      {
+        path: 'proyectos/creacion',
+        component: ProyectosCreacionComponent,
       },
       {
         path: 'theme',

@@ -1,3 +1,5 @@
+import { GanttModuleModule } from './../../modulos/gantt-module/gantt-module.module';
+import { GanttModuleComponent } from './../../modulos/gantt-module/gantt-module.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,7 +14,7 @@ import {
   NavModule,
   ProgressModule,
   TableModule,
-  TabsModule
+  TabsModule,
 } from '@coreui/angular';
 import { IconModule } from '@coreui/icons-angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
@@ -40,9 +42,9 @@ import { WidgetsModule } from '../widgets/widgets.module';
     ChartjsModule,
     AvatarModule,
     TableModule,
-    WidgetsModule
+    WidgetsModule,
+    GanttModuleModule,
   ],
-  declarations: [DashboardComponent]
+  declarations: [DashboardComponent],
 })
-export class DashboardModule {
-}
+export class DashboardModule {}

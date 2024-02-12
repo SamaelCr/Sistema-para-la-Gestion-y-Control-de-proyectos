@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
-import { gantt } from 'dhtmlx-gantt';
 import { DashboardChartsData, IChartProps } from './dashboard-charts-data';
 
 interface IUser {
@@ -30,7 +29,6 @@ interface IUser {
   encapsulation: ViewEncapsulation.None,
 })
 export class DashboardComponent implements OnInit {
-  @ViewChild('gantt_here', { static: true }) ganttContainer!: ElementRef;
   constructor(private chartsData: DashboardChartsData) {}
 
   public users: IUser[] = [
@@ -121,7 +119,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.initCharts();
-    gantt.init(this.ganttContainer.nativeElement);
   }
 
   initCharts(): void {
