@@ -1,14 +1,18 @@
 {
+  "projects": {
+    "default": "sgcp-28ea1"
+  },
   "targets": {
     "sgcp-28ea1": {
       "hosting": {
-        "coreui-free-angular-admin-template": [
+        "Sistema-para-la-Gestion-y-Control-de-proyectos": [
           "sgcp-app"
+        ],
+        "SGCP": [
+          "dist"
         ]
       }
     }
   },
-  "projects": {
-    "default": "sgcp-28ea1"
-  }
+  "etags": {}
 }

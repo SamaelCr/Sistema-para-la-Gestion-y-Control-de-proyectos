@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "coreui-free-angular-admin-template": {
+    "Sistema-para-la-Gestion-y-Control-de-proyectos": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/coreui-free-angular-admin-template",
+            "outputPath": "dist/Sistema-para-la-Gestion-y-Control-de-proyectos",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "coreui-free-angular-admin-template:build:production"
+              "buildTarget": "Sistema-para-la-Gestion-y-Control-de-proyectos:build:production"
             },
             "development": {
-              "buildTarget": "coreui-free-angular-admin-template:build:development"
+              "buildTarget": "Sistema-para-la-Gestion-y-Control-de-proyectos:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "coreui-free-angular-admin-template:build"
+            "buildTarget": "Sistema-para-la-Gestion-y-Control-de-proyectos:build"
           }
         },
         "test": {
@@ -99,12 +99,12 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "coreui-free-angular-admin-template:build:production",
-              "serveTarget": "coreui-free-angular-admin-template:serve:production"
+              "buildTarget": "Sistema-para-la-Gestion-y-Control-de-proyectos:build:production",
+              "serveTarget": "Sistema-para-la-Gestion-y-Control-de-proyectos:serve:production"
             },
             "development": {
-              "buildTarget": "coreui-free-angular-admin-template:build:development",
-              "serveTarget": "coreui-free-angular-admin-template:serve:development"
+              "buildTarget": "Sistema-para-la-Gestion-y-Control-de-proyectos:build:development",
+              "serveTarget": "Sistema-para-la-Gestion-y-Control-de-proyectos:serve:development"
             }
           },
           "defaultConfiguration": "production"

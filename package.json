@@ -1,5 +1,5 @@
 {
-  "name": "coreui-free-angular-admin-template",
+  "name": "sistema-para-la-gestion-y-control-de-proyectos",
   "version": "4.7.0",
   "copyright": "Copyright 2023 creativeLabs Łukasz Holeczek",
   "license": "MIT",
@@ -47,7 +47,7 @@
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.3",
+    "@angular-devkit/build-angular": "^17.1.3",
     "@angular/cli": "^17.0.3",
     "@angular/compiler-cli": "^17.0.4",
     "@angular/localize": "^17.0.4",
