@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
+import { ProyectosCreacionComponent } from './proyectos-creacion/proyectos-creacion.component';
+
 import { CommonModule } from '@angular/common';
-import { ProyectosComponent } from './proyectos.component';
+import { GanttModuleModule } from '../gantt-module/gantt-module.module';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [ProyectosComponent]
+  imports: [CommonModule, GanttModuleModule],
+  declarations: [ProyectosCreacionComponent],
+  exports: [ProyectosCreacionComponent],
 })
-export class ProyectosModule { }
+export class ProyectosModule {}

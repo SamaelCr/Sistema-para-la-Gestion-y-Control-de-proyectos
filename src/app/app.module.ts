@@ -1,3 +1,5 @@
+import { ProyectosModule } from './modulos/proyectos/proyectos.module';
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -74,6 +76,8 @@ import {
   getRemoteConfig,
   provideRemoteConfig,
 } from '@angular/fire/remote-config';
+import { GanttModuleComponent } from './modulos/gantt-module/gantt-module.component';
+import { GanttModuleModule } from './modulos/gantt-module/gantt-module.module';
 
 const APP_CONTAINERS = [
   DefaultFooterComponent,
@@ -110,6 +114,8 @@ const APP_CONTAINERS = [
     ListGroupModule,
     CardModule,
     NgScrollbarModule,
+    ProyectosModule,
+    GanttModuleModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideAnalytics(() => getAnalytics()),

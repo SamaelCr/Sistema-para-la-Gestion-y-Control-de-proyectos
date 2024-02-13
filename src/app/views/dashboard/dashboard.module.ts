@@ -1,5 +1,3 @@
-import { GanttModuleModule } from './../../modulos/gantt-module/gantt-module.module';
-import { GanttModuleComponent } from './../../modulos/gantt-module/gantt-module.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -43,7 +41,6 @@ import { WidgetsModule } from '../widgets/widgets.module';
     AvatarModule,
     TableModule,
     WidgetsModule,
-    GanttModuleModule,
   ],
   declarations: [DashboardComponent],
 })

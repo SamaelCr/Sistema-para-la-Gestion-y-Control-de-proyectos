@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { Page404Component } from './page404/page404.component';
 import { Page500Component } from './page500/page500.component';
-
+import { FormsModule } from '@angular/forms';
 import {
   ButtonModule,
   CardModule,
@@ -30,6 +30,7 @@ import { IconModule } from '@coreui/icons-angular';
     GridModule,
     IconModule,
     FormModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
 })

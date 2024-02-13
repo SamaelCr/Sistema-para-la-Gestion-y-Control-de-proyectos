@@ -1,41 +1,53 @@
 import { Injectable } from '@angular/core';
+import { getAuth } from 'firebase/auth';
 import {
-  getDatabase,
-  ref,
-  onValue,
-  push,
-  DataSnapshot,
-} from 'firebase/database';
-import { map } from 'rxjs/operators';
-
-interface Task {
-  key: string;
-  // Agrega aquí las propiedades de tus tareas
-}
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  setDoc,
+  deleteDoc,
+} from 'firebase/firestore';
+import { Observable } from 'rxjs';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { User, Project, Task } from './types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FirebaseService {
-  db = getDatabase();
+  db = getFirestore();
+  auth = getAuth();
 
-  getTasks() {
-    const tasksRef = ref(this.db, '/tasks');
-    return onValue(tasksRef, (snapshot: DataSnapshot) => {
-      const tasks: Task[] = [];
-      snapshot.forEach((childSnapshot: DataSnapshot) => {
-        const key = childSnapshot.key as string;
-        const val = childSnapshot.val();
-        tasks.push({ key, ...val });
+  getTasks(): Observable<Task[]> {
+    const userId = this.auth.currentUser?.uid;
+    const tasksCollection = collection(this.db, `tasks/${userId}`);
+    return new Observable((observer) => {
+      getDocs(tasksCollection).then((querySnapshot) => {
+        const tasks: Task[] = [];
+        querySnapshot.forEach((doc) => {
+          tasks.push({ taskId: doc.id, ...doc.data() } as Task);
+        });
+        observer.next(tasks);
       });
-      return tasks;
     });
   }
 
   addTask(task: Task) {
-    const tasksRef = ref(this.db, '/tasks');
-    return push(tasksRef, task);
+    const userId = this.auth.currentUser?.uid ?? '';
+    const taskRef = doc(this.db, `/tasks/${userId}/${task.taskId}`);
+    return setDoc(taskRef, task);
   }
 
-  // Agrega aquí los métodos para actualizar y eliminar tareas
+  updateTask(task: Task) {
+    const userId = this.auth.currentUser?.uid ?? '';
+    const taskRef = doc(this.db, `/tasks/${userId}/${task.taskId}`);
+    return setDoc(taskRef, task, { merge: true });
+  }
+
+  deleteTask(task: Task) {
+    const userId = this.auth.currentUser?.uid ?? '';
+    const taskRef = doc(this.db, `/tasks/${userId}/${task.taskId}`);
+    return deleteDoc(taskRef);
+  }
 }
