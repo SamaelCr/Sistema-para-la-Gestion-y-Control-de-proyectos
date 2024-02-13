@@ -1,3 +1,71 @@
-<p>
-  proyectos-creacion works!
-</p>
+<c-col xs="12">
+  <c-card class="mb-4">
+    <c-card-header ngPreserveWhitespaces>
+      <strong>Complete los campos del proyecto</strong>
+    </c-card-header>
+    <c-card-body>
+
+      <form [gutter]="3" cForm cRow class="needs-validation" ngNativeValidate>
+        <c-col [md]="12">
+          <label cLabel for="validationServer01">Nombre del proyecto</label>
+          <input [valid]="true" cFormControl id="validationServer01" required type="text" value="Nombre de ejemplo" />
+          <c-form-feedback [valid]="true">Completado</c-form-feedback>
+        </c-col>
+
+        <c-col [md]="12">
+          <label cLabel for="validationServer02">Descripcion del proyecto</label>
+          <textarea [valid]="true"cFormControl id="validationServer02" type="text" required id="" value="texto de ejemplo" cols="30" rows="10"></textarea>
+          <c-form-feedback [valid]="true">Completado</c-form-feedback>
+        </c-col>
+
+        <c-col [md]="12">
+          <label cLabel for="validationServerUsername">Tipo de Proyecto</label>
+          <c-input-group class="has-validation">
+            <span cInputGroupText id="inputGroupPrepend03">&#64;</span>
+
+            <select [valid]="false" id="validationServerTypeProject" aria-label="Default select example" cFormControl cSelect required type="text">
+              <option>Tipo de Proyecto</option>
+              <option value="1">Proyecto 1</option>
+              <option value="2">Proyecto 1</option>
+              <option value="3">Proyecto 1</option>
+            </select>
+            <c-form-feedback [valid]="false">Porfavor elija el tipo de proyecto</c-form-feedback>
+          </c-input-group>
+        </c-col>
+
+        <c-col [md]="6">
+          <label cLabel for="validationServer03">Presupuesto inicial</label>
+          <input [valid]="false" cFormControl id="validationServer03" required type="number" value="0.00"/>
+          <c-form-feedback [valid]="false">Porfavor coloque el presupuesto inicial</c-form-feedback>
+        </c-col>
+
+        <c-col [md]="3">
+          <label cLabel for="validationServer04">Fecha de inicio</label>
+          <input [valid]="true" type="date" cFormControl id="start" name="trip-start" value="2018-07-22" />
+          <c-form-feedback [valid]="false">Please provide a valid date.</c-form-feedback>
+        </c-col>
+
+        <c-col [md]="3">
+          <label cLabel for="validationServer05">Fecha de final</label>
+          <input [valid]="true" type="date" cFormControl id="start" name="trip-start" value="2018-07-22" />
+          <c-form-feedback [valid]="false">Please provide a valid date.</c-form-feedback>
+        </c-col>
+
+        <!-- <c-col [xs]="12">
+          <c-form-check class="mb-3">
+            <input [valid]="false" cFormCheckInput id="invalidCheckServer" required type="checkbox">
+            <label cFormCheckLabel for="invalidCheckServer">Agree to terms and conditions</label>
+          </c-form-check>
+          <c-form-feedback [valid]="false">You must agree before submitting.</c-form-feedback>
+        </c-col> -->
+
+        <c-col [xs]="12">
+          <button cButton color="primary" type="submit">
+            Crear proyecto
+          </button>
+        </c-col>
+      </form>
+
+    </c-card-body>
+  </c-card>
+</c-col>

@@ -15,8 +15,18 @@ export const navItems: INavData[] = [
     name: 'Proyectos',
   },
   {
-    name: 'Proyectos',
+    name: 'Creación',
     url: '/proyectos/creacion',
+    iconComponent: { name: 'cil-calendar' },
+  },
+  {
+    name: 'Tareas',
+    url: '/proyectos/tareas',
+    iconComponent: { name: 'cil-calendar' },
+  },
+  {
+    name: 'Presupuesto',
+    url: '/proyectos/presupuesto',
     iconComponent: { name: 'cil-calendar' },
   },
   {

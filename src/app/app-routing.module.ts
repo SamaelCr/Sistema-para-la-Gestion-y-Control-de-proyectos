@@ -7,6 +7,8 @@ import { Page404Component } from './views/pages/page404/page404.component';
 import { Page500Component } from './views/pages/page500/page500.component';
 import { LoginComponent } from './views/pages/login/login.component';
 import { RegisterComponent } from './views/pages/register/register.component';
+import { PresupuestoComponent } from './modulos/proyectos/presupuesto/presupuesto.component'
+import { TareasComponent } from './modulos/proyectos/tareas/tareas.component'
 
 const routes: Routes = [
   {
@@ -31,6 +33,14 @@ const routes: Routes = [
       {
         path: 'proyectos/creacion',
         component: ProyectosCreacionComponent,
+      },
+      {
+        path: 'proyectos/presupuesto',
+        component: PresupuestoComponent,
+      },
+      {
+        path: 'proyectos/tareas',
+        component: TareasComponent,
       },
       {
         path: 'theme',

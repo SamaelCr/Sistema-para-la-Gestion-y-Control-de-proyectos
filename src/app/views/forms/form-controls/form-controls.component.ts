@@ -12,3 +12,4 @@ export class FormControlsComponent {
   constructor() { }
 
 }
+export class formControls {}
